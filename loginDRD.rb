@@ -24,7 +24,7 @@ require "selenium-webdriver"
 
 
 #Home page
-	#Enters new historical case
+	#Enters new historical case.
 		browser.find_element(xpath: "/html/body/div/section[2]/div/article[1]/div/a[1]").click
 		
 
