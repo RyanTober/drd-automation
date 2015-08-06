@@ -10,24 +10,27 @@ xpath				:xpath/
 #BROWSER: FIREFOX
 require "rubygems"
 require "selenium-webdriver"
- browser = Selenium::WebDriver.for :firefox
+require 'minitest/autorun'
+ browser = Selenium::WebDriver.for :firefox 
   browser.get "http://drd-dev.elasticbeanstalk.com/#/login"
    browser.current_url
 	browser.title
+		sleep(2)	
+
+
+
+browser.find_element(id: "environment-start").click
+
 
 	#Login screen
 
-	browser.find_element(id: "user-email").send_keys "josh"
+	browser.find_element(id: "user-email").send_keys "kelley"
 		browser.find_element(id: "user-password").send_keys "test_password"
 			browser.find_element(id: "loginFormSubmitBtn").click
 		sleep(1)
 
 
-#Home page
-	#Enters new historical case.
-		browser.find_element(xpath: "/html/body/div/section[2]/div/article[1]/div/a[1]").click
-		
 
-browser.close
+
 
 
